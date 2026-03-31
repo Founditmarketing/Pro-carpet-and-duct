@@ -1,4 +1,4 @@
-import { Fan, Footprints, Sofa, CheckCircle2, ArrowRight, Layers, Building2 } from 'lucide-react';
+import { Fan, Droplets, Sofa, CheckCircle2, ArrowRight, Layers, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -6,7 +6,7 @@ const services = [
     id: 1,
     title: 'Carpet Cleaning',
     desc: 'Deep hot-water extraction using Hurricane™ truck-mounted blowers and 200°F industrial steam.',
-    icon: <Footprints className="w-8 h-8" />,
+    icon: <Droplets className="w-8 h-8" />,
     iconColor: 'text-secondary',
     features: ['Eliminates VIRUSES & GERMS', 'Pet Odor Destruction', 'Faster Drying Times', 'Hurricance™ Heavy Suction'],
     link: '/carpet'
@@ -53,10 +53,8 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-24 px-4 bg-slate-50">
       <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block px-4 py-1.5 mb-4 bg-primary/5 rounded-full border border-primary/20 text-primary uppercase text-xs font-bold tracking-widest leading-none">
-            Our Expertise
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+          <span className="text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Our Expertise</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">Expert Cleaning Solutions</h2>
           <p className="text-slate-600 text-lg leading-relaxed">
             Since 1985, we've provided Alexandria's most powerful residential and commercial cleaning. We don't just clean—we sanitize.
