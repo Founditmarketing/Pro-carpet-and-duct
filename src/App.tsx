@@ -54,11 +54,13 @@ const App: React.FC = () => {
         <nav className={`w-full h-20 transition-all duration-300 ${isScrolled ? 'bg-primary/95 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'}`}>
         <div className="w-full px-4 md:px-8 h-full flex items-center justify-between">
           <div className="flex items-center h-full py-2 relative z-10 transition-transform duration-500 ease-out">
-            <img 
-              src="/procarpetlogotransparent-2.png" 
-              alt="Pro Carpet & Duct Logo" 
-              className={`w-auto object-contain origin-left transition-all duration-500 ease-out ${isScrolled ? 'h-10 md:h-[70%] lg:h-full scale-100 mt-0 drop-shadow-md' : 'h-12 md:h-full scale-100 lg:scale-[1.1] xl:scale-[1.35] mt-1 lg:mt-7 drop-shadow-lg'}`} 
-            />
+            <Link to="/" className="flex items-center h-full">
+              <img 
+                src="/procarpetlogotransparent-2.png" 
+                alt="Pro Carpet & Duct Logo" 
+                className={`w-auto object-contain origin-left transition-all duration-500 ease-out ${isScrolled ? 'h-10 md:h-[70%] lg:h-full scale-100 mt-0 drop-shadow-md' : 'h-12 md:h-full scale-100 lg:scale-[1.1] xl:scale-[1.35] mt-1 lg:mt-7 drop-shadow-lg'}`} 
+              />
+            </Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-xs font-bold text-white drop-shadow-md justify-end flex-grow pr-2 xl:pr-4 whitespace-nowrap">
@@ -101,7 +103,9 @@ const App: React.FC = () => {
       <div className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-primary shadow-2xl z-[9999] transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] lg:hidden flex flex-col border-l border-white/5 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/10 bg-slate-900/40">
-          <img src="/procarpetlogotransparent-2.png" alt="Pro Carpet Logo" className="h-10 w-auto object-contain" />
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:opacity-80 transition-opacity">
+            <img src="/procarpetlogotransparent-2.png" alt="Pro Carpet Logo" className="h-10 w-auto object-contain" />
+          </Link>
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
             className="p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/10"
@@ -172,9 +176,9 @@ const App: React.FC = () => {
       <footer className="bg-primary text-white py-16 px-6 border-t border-slate-900">
         <div className="container mx-auto grid md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-1">
-            <div className="mb-6">
+            <Link to="/" className="inline-block mb-6 hover:opacity-80 transition-opacity">
                <img src="/procarpetlogotransparent-2.png" alt="Pro Carpet & Duct Logo" className="h-16 w-auto object-contain" />
-            </div>
+            </Link>
             <p className="text-slate-300 leading-relaxed text-sm">
               Alexandria's premier indoor air quality specialists. Serving Pineville, Alexandria, and surrounding areas since 1985. Family owned and operated.
             </p>
