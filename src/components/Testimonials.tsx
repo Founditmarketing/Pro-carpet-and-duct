@@ -100,8 +100,8 @@ const Testimonials: React.FC<TestimonialsProps> = ({ limit }) => {
               <Star className="w-5 h-5 text-secondary group-hover:rotate-12 transition-transform" />
             </Link>
           ) : (
-            <a href="https://www.google.com/search?q=pro+carpet+and+duct+cleaning+alexandria+la+reviews" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-white font-black px-10 py-5 rounded-sm hover:bg-slate-900 transition-all shadow-2xl uppercase tracking-[0.2em] text-sm group">
-              Read More on Google
+            <a href="https://www.google.com/maps/place/Pro+Carpet+%26+Duct+Cleaning/@31.3036439,-92.4837381,17z/data=!3m1!4b1!4m6!3m5!1s0x863ab5867bacf2ff:0x5d8b7e10ef83c54f!8m2!3d31.3036439!4d-92.4837381!16s%2Fg%2F11jd_bktsx?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-white font-black px-10 py-5 rounded-sm hover:bg-slate-900 transition-all shadow-2xl uppercase tracking-[0.2em] text-sm group">
+              Leave a Review
               <Star className="w-5 h-5 text-secondary group-hover:rotate-12 transition-transform" />
             </a>
           )}
