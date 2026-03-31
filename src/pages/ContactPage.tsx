@@ -1,25 +1,46 @@
-import React, { useEffect } from 'react';
-import { Phone, MapPin, Clock, Facebook, Send } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Phone, MapPin, Clock, Facebook, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import { sendQuoteEmail } from '../utils/sendEmail';
 
 const ContactPage: React.FC = () => {
   const { pathname } = useLocation();
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [service, setService] = useState('Carpet Deep Cleaning');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMsg('');
+
+    const result = await sendQuoteEmail({ name, phone, email, service, message });
+
+    if (result.success) {
+      setStatus('success');
+      setName(''); setPhone(''); setEmail(''); setMessage('');
+    } else {
+      setStatus('error');
+      setErrorMsg(result.error || 'Something went wrong.');
+    }
+  };
+
   return (
     <main className="pt-28 md:pt-36 pb-20 animate-fade-in-up bg-primary min-h-screen relative overflow-hidden">
-      
-      {/* Solid Background Canvas */}
-      
       <section className="container mx-auto max-w-7xl px-4 py-8 md:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           
-          {/* Left Column: Direct Page Text (Blended) */}
+          {/* Left Column */}
           <div className="text-white relative flex flex-col justify-center">
-            
             <div className="relative z-10 w-full mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif font-bold mb-6 leading-tight drop-shadow-lg">Fast, Reliable Cleaning Operations.</h1>
               <p className="text-slate-300 text-lg leading-relaxed drop-shadow-md max-w-lg">
@@ -60,10 +81,8 @@ const ContactPage: React.FC = () => {
                    <div className="text-base md:text-lg text-slate-200 font-medium">Open 24 Hours / 7 Days a week</div>
                 </div>
               </div>
-
             </div>
 
-            {/* Social Bottom Anchor */}
             <div className="mt-12 md:mt-16 pt-8 border-t border-white/10 relative z-10 flex items-center justify-between lg:justify-start lg:gap-8">
               <span className="text-xs md:text-sm font-bold tracking-widest uppercase text-slate-400">Follow Our Work</span>
               <a href="https://www.facebook.com/procarpetandductcleaning/" target="_blank" rel="noreferrer" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center transition-colors border border-white/10 hover:border-secondary shadow-lg hover:shadow-[0_0_20px_rgba(239,68,68,0.5)]">
@@ -72,50 +91,72 @@ const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
+          {/* Right Column: Form */}
           <div className="relative mt-8 lg:mt-0 md:pl-8 lg:border-l border-white/10">
             <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-2 block">Contact Our Team</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-6 leading-tight">Request A Free Quote</h2>
             <p className="text-slate-300 mb-8 text-lg font-medium">We typically reply with an accurate estimate within an hour.</p>
 
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="block text-xs font-black text-white uppercase tracking-widest">Full Name</label>
-                  <input type="text" required className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50" placeholder="John Doe" />
+            {status === 'success' ? (
+              <div className="bg-emerald-900/40 border-2 border-emerald-500/40 rounded-md p-12 text-center">
+                <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-10 h-10" />
                 </div>
-                <div className="space-y-2">
-                  <label className="block text-xs font-black text-white uppercase tracking-widest">Phone Number</label>
-                  <input type="tel" required className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50" placeholder="(318) 445-4818" />
-                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Message Sent!</h3>
+                <p className="text-slate-300 font-medium">Dustin or Pete will give you a call shortly.</p>
               </div>
-
-              <div className="space-y-2">
-                <label className="block text-xs font-black text-white uppercase tracking-widest">Priority Service</label>
-                <div className="relative">
-                  <select className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all text-slate-900 font-bold appearance-none bg-slate-50 cursor-pointer">
-                    <option>Carpet Deep Cleaning</option>
-                    <option>Air Duct Sanitization</option>
-                    <option>Ceramic Tile & Grout</option>
-                    <option>Upholstery Refresh</option>
-                    <option>Commercial Venue Cleaning</option>
-                  </select>
-                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+            ) : (
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="block text-xs font-black text-white uppercase tracking-widest">Full Name</label>
+                    <input type="text" required value={name} onChange={e => setName(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50" placeholder="John Doe" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-xs font-black text-white uppercase tracking-widest">Phone Number</label>
+                    <input type="tel" required value={phone} onChange={e => setPhone(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50" placeholder="(318) 445-4818" />
                   </div>
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="block text-xs font-black text-white uppercase tracking-widest">Specific Concerns</label>
-                <textarea rows={4} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50 resize-none" placeholder="Tell us about allergies, pet odors, or building size..."></textarea>
-              </div>
+                <div className="space-y-2">
+                  <label className="block text-xs font-black text-white uppercase tracking-widest">Email (optional — for reply)</label>
+                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50" placeholder="john@email.com" />
+                </div>
 
-              <button type="submit" className="w-full bg-secondary hover:bg-red-700 text-white font-black py-5 rounded-sm shadow-xl transition-all flex items-center justify-center gap-3 uppercase tracking-[0.2em] mt-4">
-                <Send className="w-5 h-5" />
-                Submit Request
-              </button>
-            </form>
+                <div className="space-y-2">
+                  <label className="block text-xs font-black text-white uppercase tracking-widest">Priority Service</label>
+                  <div className="relative">
+                    <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all text-slate-900 font-bold appearance-none bg-slate-50 cursor-pointer">
+                      <option>Carpet Deep Cleaning</option>
+                      <option>Air Duct Sanitization</option>
+                      <option>Ceramic Tile &amp; Grout</option>
+                      <option>Upholstery Refresh</option>
+                      <option>Commercial Venue Cleaning</option>
+                    </select>
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="block text-xs font-black text-white uppercase tracking-widest">Specific Concerns</label>
+                  <textarea rows={4} value={message} onChange={e => setMessage(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all font-bold text-slate-900 bg-slate-50 resize-none" placeholder="Tell us about allergies, pet odors, or building size..."></textarea>
+                </div>
+
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 bg-red-900/40 border border-red-500/40 rounded-sm px-4 py-3 text-red-300 text-sm font-bold">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    {errorMsg}
+                  </div>
+                )}
+
+                <button type="submit" disabled={status === 'loading'} className="w-full bg-secondary hover:bg-red-700 disabled:opacity-70 text-white font-black py-5 rounded-sm shadow-xl transition-all flex items-center justify-center gap-3 uppercase tracking-[0.2em] mt-4">
+                  {status === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+                  {status === 'loading' ? 'Sending...' : 'Submit Request'}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>

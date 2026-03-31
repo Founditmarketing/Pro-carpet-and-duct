@@ -1,14 +1,31 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+import { sendQuoteEmail } from '../utils/sendEmail';
 
 const Contact: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [service, setService] = useState('Carpet Cleaning (Industrial Steam)');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Simulate form submission
-    setTimeout(() => setSubmitted(false), 5000);
+    setStatus('loading');
+    setErrorMsg('');
+
+    const result = await sendQuoteEmail({ name, phone, email, service, message });
+
+    if (result.success) {
+      setStatus('success');
+      setName(''); setPhone(''); setEmail(''); setMessage('');
+    } else {
+      setStatus('error');
+      setErrorMsg(result.error || 'Something went wrong.');
+    }
   };
 
   return (
@@ -24,7 +41,7 @@ const Contact: React.FC = () => {
               Ready for a cleaner, healthier home? Fill out the form below or call us directly. We're <span className="text-secondary font-bold">Open 24/7</span> for your convenience.
             </p>
 
-            {submitted ? (
+            {status === 'success' ? (
               <div className="bg-emerald-50 border-2 border-emerald-200 rounded-md p-12 text-center shadow-xl">
                 <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="w-10 h-10" />
@@ -37,20 +54,25 @@ const Contact: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="block text-xs font-black text-primary uppercase tracking-widest">Full Name</label>
-                    <input type="text" required className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="John Doe" />
+                    <input type="text" required value={name} onChange={e => setName(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <label className="block text-xs font-black text-primary uppercase tracking-widest">Phone Number</label>
-                    <input type="tel" required className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="(318) 445-4818" />
+                    <input type="tel" required value={phone} onChange={e => setPhone(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="(318) 445-4818" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
+                  <label className="block text-xs font-black text-primary uppercase tracking-widest">Email (optional)</label>
+                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="john@email.com" />
+                </div>
+
+                <div className="space-y-2">
                   <label className="block text-xs font-black text-primary uppercase tracking-widest">Priority Service</label>
-                  <select className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all text-slate-600 font-bold appearance-none">
+                  <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all text-slate-600 font-bold appearance-none">
                     <option>Carpet Cleaning (Industrial Steam)</option>
                     <option>Air Duct Cleaning (Rotobrush™)</option>
-                    <option>Ceramic Tile & Grout Sealing</option>
+                    <option>Ceramic Tile &amp; Grout Sealing</option>
                     <option>Upholstery Refresh</option>
                     <option>Commercial Venue Cleaning</option>
                   </select>
@@ -58,12 +80,19 @@ const Contact: React.FC = () => {
 
                 <div className="space-y-2">
                   <label className="block text-xs font-black text-primary uppercase tracking-widest">Specific Concerns</label>
-                  <textarea rows={4} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="Tell us about allergies, pet odors, or building size..."></textarea>
+                  <textarea rows={4} value={message} onChange={e => setMessage(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-900" placeholder="Tell us about allergies, pet odors, or building size..."></textarea>
                 </div>
 
-                <button type="submit" className="w-full bg-primary hover:bg-slate-900 text-white font-black py-5 rounded-sm shadow-xl transition-all flex items-center justify-center gap-3 uppercase tracking-[0.2em]">
-                  <Send className="w-5 h-5 text-secondary" />
-                  Submit Request
+                {status === 'error' && (
+                  <div className="flex items-center gap-3 bg-red-50 border border-red-200 rounded-sm px-4 py-3 text-red-700 text-sm font-bold">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    {errorMsg}
+                  </div>
+                )}
+
+                <button type="submit" disabled={status === 'loading'} className="w-full bg-primary hover:bg-slate-900 disabled:opacity-70 text-white font-black py-5 rounded-sm shadow-xl transition-all flex items-center justify-center gap-3 uppercase tracking-[0.2em]">
+                  {status === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5 text-secondary" />}
+                  {status === 'loading' ? 'Sending...' : 'Submit Request'}
                 </button>
               </form>
             )}
@@ -82,7 +111,6 @@ const Contact: React.FC = () => {
           {/* Right Column: Map & Areas */}
           <div className="space-y-8 lg:pt-12">
             <div className="bg-primary rounded-md p-2 shadow-2xl h-[450px] relative">
-              {/* Overlay Label */}
               <div className="absolute top-6 left-6 z-10 bg-white text-primary px-5 py-3 rounded-sm text-xs font-black shadow-2xl flex items-center gap-3 border-b-4 border-secondary">
                 <MapPin className="w-5 h-5 text-secondary" />
                 SERVING ALL OF CENTRAL LOUISIANA
