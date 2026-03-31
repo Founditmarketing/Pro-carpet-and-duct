@@ -57,11 +57,11 @@ const App: React.FC = () => {
             <img 
               src="/procarpetlogotransparent-2.png" 
               alt="Pro Carpet & Duct Logo" 
-              className={`w-auto object-contain origin-left transition-all duration-500 ease-out ${isScrolled ? 'h-10 md:h-[70%] lg:h-full scale-100 mt-0 drop-shadow-md' : 'h-12 md:h-full scale-100 lg:scale-[1.35] mt-1 lg:mt-7 drop-shadow-lg'}`} 
+              className={`w-auto object-contain origin-left transition-all duration-500 ease-out ${isScrolled ? 'h-10 md:h-[70%] lg:h-full scale-100 mt-0 drop-shadow-md' : 'h-12 md:h-full scale-100 lg:scale-[1.1] xl:scale-[1.35] mt-1 lg:mt-7 drop-shadow-lg'}`} 
             />
           </div>
 
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-bold text-white drop-shadow-md justify-end flex-grow pr-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-8 text-[10px] xl:text-xs font-bold text-white drop-shadow-md justify-end flex-grow pr-2 xl:pr-4 whitespace-nowrap">
             <Link to="/" className="hover:text-secondary transition-colors uppercase tracking-widest">Home</Link>
             <Link to="/carpet" className="hover:text-secondary transition-colors uppercase tracking-widest">Carpet</Link>
             <Link to="/air-duct" className="hover:text-secondary transition-colors uppercase tracking-widest">Air Duct</Link>
@@ -71,12 +71,12 @@ const App: React.FC = () => {
             <Link to="/gallery" className="hover:text-secondary transition-colors uppercase tracking-widest">Gallery</Link>
             <Link to="/contact" className="hover:text-secondary transition-colors uppercase tracking-widest">Contact Us</Link>
             
-            <div className="flex items-center ml-2 border-l border-white/30 pl-6 xl:pl-8">
+            <div className="flex items-center ml-1 xl:ml-2 border-l border-white/30 pl-3 xl:pl-8">
               <a href="https://www.facebook.com/procarpetandductcleaning/" target="_blank" rel="noreferrer" className="hover:text-secondary transition-transform hover:scale-110"><Facebook className="w-5 h-5" /></a>
             </div>
 
-            <a href="tel:+13184454818" className="bg-secondary text-white px-6 py-3 rounded-md hover:bg-red-700 transition-all flex items-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold uppercase tracking-tight ml-4">
-              <Phone className="w-4 h-4" />
+            <a href="tel:+13184454818" className="bg-secondary text-white px-3 py-2 xl:px-6 xl:py-3 rounded-md hover:bg-red-700 transition-all flex items-center gap-1 xl:gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 font-bold uppercase tracking-tight ml-3 xl:ml-4 text-[10px] xl:text-xs">
+              <Phone className="w-3 h-3 xl:w-4 xl:h-4" />
               (318) 445-4818
             </a>
           </div>
