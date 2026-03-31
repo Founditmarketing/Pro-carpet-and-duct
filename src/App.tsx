@@ -8,6 +8,11 @@ import TileService from './pages/TileService';
 import Reviews from './pages/Reviews';
 import ContactPage from './pages/ContactPage';
 import Gallery from './pages/Gallery';
+import PetOdorRemoval from './pages/PetOdorRemoval';
+import HvacDuctCleaning from './pages/HvacDuctCleaning';
+import CeramicTileSealing from './pages/CeramicTileSealing';
+import UpholsterySteamCleaning from './pages/UpholsterySteamCleaning';
+import CommercialTileDegreasing from './pages/CommercialTileDegreasing';
 import StickyCallButton from './components/StickyCallButton';
 import { Phone, MapPin, Facebook, Clock, Menu, X } from 'lucide-react';
 
@@ -156,6 +161,11 @@ const App: React.FC = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/pet-odor-stain-removal-alexandria-la" element={<PetOdorRemoval />} />
+        <Route path="/hvac-rotobrush-duct-cleaning-pineville-la" element={<HvacDuctCleaning />} />
+        <Route path="/ceramic-tile-grout-color-sealing-alexandria" element={<CeramicTileSealing />} />
+        <Route path="/upholstery-sofa-steam-cleaning-alexandria" element={<UpholsterySteamCleaning />} />
+        <Route path="/commercial-restaurant-tile-degreasing-alexandria" element={<CommercialTileDegreasing />} />
       </Routes>
 
       {/* Footer */}
@@ -200,11 +210,21 @@ const App: React.FC = () => {
 
           <div>
             <h4 className="font-bold text-lg mb-6 text-white border-b border-secondary/30 pb-2">Service Areas</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-6">
               {['Alexandria', 'Pineville', 'Ball', 'Boyce', 'Forest Hill', 'Woodworth', 'Lecompte', 'Tioga', 'Libuse'].map(city => (
                 <span key={city} className="px-3 py-1 bg-white/10 rounded-sm text-xs text-slate-200 border border-white/10 hover:border-secondary hover:text-white transition-colors cursor-default">{city}</span>
               ))}
             </div>
+            
+            <h4 className="font-bold text-lg mb-6 text-white border-b border-secondary/30 pb-2">Specialty Local Services</h4>
+            <div className="flex flex-col gap-2 text-slate-300 text-xs font-bold uppercase tracking-wider">
+              <Link to="/pet-odor-stain-removal-alexandria-la" className="hover:text-secondary transition-colors">Pet Urine & Odor Removal</Link>
+              <Link to="/hvac-rotobrush-duct-cleaning-pineville-la" className="hover:text-secondary transition-colors">HVAC Pineville Dust Cleaning</Link>
+              <Link to="/ceramic-tile-grout-color-sealing-alexandria" className="hover:text-secondary transition-colors">Ceramic Grout Color Sealing</Link>
+              <Link to="/upholstery-sofa-steam-cleaning-alexandria" className="hover:text-secondary transition-colors">Upholstered Sofa Sanitization</Link>
+              <Link to="/commercial-restaurant-tile-degreasing-alexandria" className="hover:text-secondary transition-colors">Commercial Restaurant Degreasing</Link>
+            </div>
+
             <div className="mt-8 flex gap-4">
               <a href="https://www.facebook.com/procarpetandductcleaning/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all text-white">
                 <Facebook className="w-5 h-5" />
