@@ -59,6 +59,18 @@ const ContactPage: React.FC = () => {
                 </div>
               </a>
 
+              <a href="mailto:procarpetandductcleaning@gmail.com" className="flex items-start gap-4 md:gap-5 hover:text-white transition-all group">
+                <div className="bg-white/5 p-3 md:p-4 rounded-full group-hover:scale-110 transition-all border border-white/10 shadow-inner">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                   <div className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Email Address</div>
+                   <div className="text-base md:text-xl font-bold group-hover:text-secondary transition-colors drop-shadow-md">procarpetandductcleaning@gmail.com</div>
+                </div>
+              </a>
+
               <div className="flex items-start gap-4 md:gap-5">
                 <div className="bg-white/5 p-3 md:p-4 rounded-full border border-white/10 shadow-inner">
                   <MapPin className="w-5 h-5 md:w-6 md:h-6 text-secondary" />

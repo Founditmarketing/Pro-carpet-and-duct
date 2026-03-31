@@ -97,13 +97,27 @@ const Contact: React.FC = () => {
               </form>
             )}
 
-            <div className="mt-12 flex items-center gap-6 p-8 bg-slate-50 rounded-md border-l-8 border-secondary shadow-lg">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-secondary shadow-md shrink-0">
-                <Phone className="w-8 h-8" />
+            <div className="mt-12 space-y-4">
+              <div className="flex items-center gap-6 p-8 bg-slate-50 rounded-md border-l-8 border-secondary shadow-lg">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-secondary shadow-md shrink-0">
+                  <Phone className="w-8 h-8" />
+                </div>
+                <div className="space-y-1 overflow-hidden">
+                  <p className="text-xs text-slate-500 font-black uppercase tracking-widest">Direct Line • 24/7</p>
+                  <a href="tel:+13184454818" className="text-2xl md:text-3xl font-black text-primary hover:text-secondary transition-colors tracking-tighter">(318) 445-4818</a>
+                </div>
               </div>
-              <div className="space-y-1">
-                <p className="text-xs text-slate-500 font-black uppercase tracking-widest">Direct Line • 24/7</p>
-                <a href="tel:+13184454818" className="text-2xl md:text-3xl font-black text-primary hover:text-secondary transition-colors tracking-tighter">(318) 445-4818</a>
+
+              <div className="flex items-center gap-6 p-8 bg-slate-50 rounded-md border-l-8 border-primary shadow-lg">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-md shrink-0">
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="space-y-1 overflow-hidden">
+                  <p className="text-xs text-slate-500 font-black uppercase tracking-widest">Email Inquiries</p>
+                  <a href="mailto:procarpetandductcleaning@gmail.com" className="text-lg md:text-xl font-black text-primary hover:text-secondary transition-colors tracking-tight truncate block">procarpetandductcleaning@gmail.com</a>
+                </div>
               </div>
             </div>
           </div>
