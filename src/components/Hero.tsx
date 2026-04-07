@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
               </h1>
 
               <p className="text-lg md:text-xl text-slate-200 max-w-xl leading-relaxed font-medium">
-                Alexandria's first source for powerful Carpet, Duct, Upholstery & Ceramic Tile cleaning. We use 200°F industrial steam to eliminate odors, viruses, and dirt.
+                Alexandria's first source for powerful Carpet, Duct, Upholstery & Ceramic Tile cleaning. We use 230°F industrial steam to eliminate odors, viruses, and dirt.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">

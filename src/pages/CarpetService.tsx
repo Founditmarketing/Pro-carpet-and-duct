@@ -17,7 +17,7 @@ const CarpetService: React.FC = () => {
           <span className="inline-block py-1.5 px-4 rounded-sm bg-white/10 text-secondary font-bold text-xs uppercase tracking-widest mb-6 border border-white/10">Premium Extraction</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 drop-shadow-lg">Expert Carpet Cleaning</h1>
           <p className="text-lg md:text-xl text-slate-200 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-            Industrial truck-mounted steam extraction at 200°F. We melt away dirt, remove stubborn stains, and sanitize fibers instantly.
+            Industrial truck-mounted steam extraction at 230°F. We melt away dirt, remove stubborn stains, and sanitize fibers instantly.
           </p>
         </div>
       </section>
@@ -28,7 +28,7 @@ const CarpetService: React.FC = () => {
           <span className="inline-block py-1 px-3 rounded-sm bg-white/10 text-secondary font-bold text-[10px] uppercase tracking-widest mb-4">Premium Extraction</span>
           <h1 className="text-3xl font-serif font-bold mb-4 leading-tight drop-shadow-lg">Expert Carpet Cleaning</h1>
           <p className="text-sm text-slate-200 font-medium drop-shadow-md">
-            Industrial 200°F steam extraction. We melt dirt, remove stains, and sanitize instantly.
+            Industrial 230°F steam extraction. We melt dirt, remove stains, and sanitize instantly.
           </p>
         </div>
       </section>
@@ -55,7 +55,7 @@ const CarpetService: React.FC = () => {
                     <CheckCircle2 className="w-6 h-6 text-secondary shrink-0" />
                   </div>
                   <div>
-                    <strong className="text-slate-900 block mb-1 text-lg">200°F Thermal Shock Sanitization</strong>
+                    <strong className="text-slate-900 block mb-1 text-lg">230°F Thermal Shock Sanitization</strong>
                     <span className="text-slate-600 text-sm md:text-base leading-relaxed">Our truck-mounted system generates superheated water that liquefies heavy oils and sanitizes fibers at an industrial level.</span>
                   </div>
                 </li>

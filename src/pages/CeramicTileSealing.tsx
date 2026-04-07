@@ -52,7 +52,7 @@ const CeramicTileSealing = () => {
                 <Droplets className="w-6 h-6 text-secondary shrink-0" /> 
                 Does clear grout sealer actually protect the color?
               </h3>
-              <p className="text-slate-600 leading-relaxed">Yes. After we scrub and blast the dirt out using 200°F water, we immediately apply a professional-grade clear or colored sealant. This fills the microscopic pores, locking the exact color in and blocking future dirty mop water from staining it.</p>
+              <p className="text-slate-600 leading-relaxed">Yes. After we scrub and blast the dirt out using 230°F water, we immediately apply a professional-grade clear or colored sealant. This fills the microscopic pores, locking the exact color in and blocking future dirty mop water from staining it.</p>
             </div>
           </div>
 

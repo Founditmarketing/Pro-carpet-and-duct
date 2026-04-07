@@ -10,7 +10,7 @@ const Equipment: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-2 block">Industrial Grade Technology</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">The Power of <span className="text-secondary underline decoration-white/20">200°F</span> Cleaning</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">The Power of <span className="text-secondary underline decoration-white/20">230°F</span> Cleaning</h2>
           <p className="text-slate-300 text-lg md:text-xl font-medium leading-relaxed">
             Most rental units and portable cleaners only reach 140°F. Our <span className="text-white font-bold">Hurricane™ truck-mounted systems</span> generate industrial steam that melts oil and kills bacteria on contact.
           </p>
@@ -23,7 +23,7 @@ const Equipment: React.FC = () => {
             </div>
             <h3 className="text-lg md:text-xl font-bold mb-1.5 md:mb-3 uppercase tracking-tight">Virus Killing Heat</h3>
             <p className="text-slate-300 text-xs md:text-sm leading-snug md:leading-relaxed">
-              Temperatures over 200°F eliminate viruses, germs, and odors. It's not just a clean appearance—it's industrial-grade sanitization.
+              Temperatures up to 230° for germ, virus, and odor elimination. It's not just a clean appearance—it's industrial-grade sanitization.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const Equipment: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white uppercase tracking-tight">Thermal Shock</h3>
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed">
-                At <strong className="text-white">200°F</strong>, our water molecules become industrial steam. This creates a "thermal shock" that instantly:
+                At <strong className="text-white">230°F</strong>, our water molecules become industrial steam. This creates a "thermal shock" that instantly:
               </p>
               <ul className="space-y-4 font-bold text-sm">
                 <li className="flex items-start gap-4 text-slate-200">
@@ -120,7 +120,7 @@ const Equipment: React.FC = () => {
               {/* Labels overlaid */}
               <div className="absolute inset-0 flex items-center justify-between px-6 text-[10px] md:text-xs font-black text-slate-900 z-10 uppercase tracking-tighter">
                 <span className="text-blue-900">140°F Rental Cleaners</span>
-                <span className="text-white drop-shadow-md text-sm animate-pulse">200°F Pro Carpet & Duct</span>
+                <span className="text-white drop-shadow-md text-sm animate-pulse">Up to 230° germ virus and odor elimination</span>
               </div>
             </div>
           </div>

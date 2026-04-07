@@ -5,7 +5,7 @@ const services = [
   {
     id: 1,
     title: 'Carpet Cleaning',
-    desc: 'Deep hot-water extraction using Hurricane™ truck-mounted blowers and 200°F industrial steam.',
+    desc: 'Deep hot-water extraction using Hurricane™ truck-mounted blowers and 230°F industrial steam.',
     icon: <Droplets className="w-8 h-8" />,
     iconColor: 'text-secondary',
     features: ['Eliminates VIRUSES & GERMS', 'Pet Odor Destruction', 'Faster Drying Times', 'Hurricance™ Heavy Suction'],

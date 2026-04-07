@@ -31,7 +31,7 @@ const PetOdorRemoval = () => {
       { "@type": "City", "name": "Alexandria", "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Louisiana" },
       { "@type": "City", "name": "Pineville", "sameAs": "https://en.wikipedia.org/wiki/Pineville,_Louisiana" }
     ],
-    "description": "Professional pet odor removal, deep enzymatic stain treatment, and 200°F steam carpet extraction for residential homes in Alexandria and Pineville.",
+    "description": "Professional pet odor removal, deep enzymatic stain treatment, and 230°F steam carpet extraction for residential homes in Alexandria and Pineville.",
     "serviceType": "Carpet Cleaning Service"
   };
 
@@ -43,7 +43,7 @@ const PetOdorRemoval = () => {
         <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">Alexandria & Pineville Service Entity</span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">Expert Pet Urine Odor &amp; Stain Carpet Extraction in Alexandria, LA</h1>
         <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl">
-          Standard carpet cleaning only masks smells. Our 200°F industrial steam extraction penetrates the carpet pad to physically destroy odor-causing bacteria and permanent urine crystals.
+          Standard carpet cleaning only masks smells. Our 230°F industrial steam extraction penetrates the carpet pad to physically destroy odor-causing bacteria and permanent urine crystals.
         </p>
 
         <Link to="/contact" className="inline-flex items-center gap-3 bg-secondary text-white font-black px-8 py-4 rounded-sm hover:bg-red-700 transition-all shadow-xl uppercase tracking-[0.2em] text-sm mb-16">
@@ -78,7 +78,7 @@ const PetOdorRemoval = () => {
               <ul className="space-y-4 text-slate-600">
                 <li className="flex gap-2">
                   <span className="text-secondary font-bold">•</span>
-                  Grocery store rentals lack the heat (200°F) required to sanitize bacteria.
+                  Grocery store rentals lack the heat (230°F) required to sanitize bacteria.
                 </li>
                 <li className="flex gap-2">
                   <span className="text-secondary font-bold">•</span>

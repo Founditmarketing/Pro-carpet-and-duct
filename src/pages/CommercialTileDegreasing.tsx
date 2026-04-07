@@ -27,7 +27,7 @@ const CommercialTileDegreasing = () => {
         <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">Alexandria Commercial Entity</span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">Commercial Restaurant Tile &amp; Grout Degreasing in Alexandria</h1>
         <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl">
-          Slippery kitchen floors are a liability. We utilize 200°F turbo-heated pressure washing connected to immense suction to instantly cut through caked-on fryer grease and restore traction to your commercial tile lines.
+          Slippery kitchen floors are a liability. We utilize 230°F turbo-heated pressure washing connected to immense suction to instantly cut through caked-on fryer grease and restore traction to your commercial tile lines.
         </p>
 
         <Link to="/contact" className="inline-flex items-center gap-3 bg-secondary text-white font-black px-8 py-4 rounded-sm hover:bg-red-700 transition-all shadow-xl uppercase tracking-[0.2em] text-sm mb-16">
