@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16">
 
           {/* Left Column: Form */}
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up min-w-0">
             <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-2 block">Contact Our Team</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">Request A Free Quote</h2>
             <p className="text-slate-600 mb-8 text-lg font-medium">
@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Right Column: Map & Areas */}
-          <div className="space-y-8 lg:pt-12">
+          <div className="space-y-8 lg:pt-12 min-w-0">
             <div className="bg-primary rounded-md p-2 shadow-2xl h-[450px] relative">
               <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-auto z-10 bg-white text-primary px-3 sm:px-5 py-2 sm:py-3 rounded-sm text-[10px] sm:text-xs font-black shadow-2xl flex items-center justify-center sm:justify-start gap-2 sm:gap-3 border-b-4 border-secondary overflow-hidden min-w-0">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
