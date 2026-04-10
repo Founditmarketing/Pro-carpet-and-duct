@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 bg-white relative">
+    <section id="contact" className="py-24 px-4 sm:px-6 bg-white relative overflow-hidden max-w-full">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
 
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
 
                 <div className="space-y-2">
                   <label className="block text-xs font-black text-primary uppercase tracking-widest">Priority Service</label>
-                  <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all text-slate-600 font-bold appearance-none">
+                  <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all text-slate-600 font-bold appearance-none overflow-hidden text-ellipsis whitespace-nowrap">
                     <option>Carpet Cleaning (Industrial Steam)</option>
                     <option>Air Duct Cleaning (Rotobrush™)</option>
                     <option>Ceramic Tile &amp; Grout Sealing</option>
@@ -98,25 +98,25 @@ const Contact: React.FC = () => {
             )}
 
             <div className="mt-12 space-y-4">
-              <div className="flex items-center gap-6 p-8 bg-slate-50 rounded-md border-l-8 border-secondary shadow-lg">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-secondary shadow-md shrink-0">
-                  <Phone className="w-8 h-8" />
+              <div className="flex items-center gap-4 sm:gap-6 p-5 sm:p-8 bg-slate-50 rounded-md border-l-8 border-secondary shadow-lg">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-secondary shadow-md shrink-0">
+                  <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <div className="space-y-1 overflow-hidden">
-                  <p className="text-xs text-slate-500 font-black uppercase tracking-widest">Direct Line • 24/7</p>
-                  <a href="tel:+13184454818" className="text-2xl md:text-3xl font-black text-primary hover:text-secondary transition-colors tracking-tighter">(318) 445-4818</a>
+                <div className="space-y-1 overflow-hidden min-w-0 flex-1">
+                  <p className="text-[10px] sm:text-xs text-slate-500 font-black uppercase tracking-widest">Direct Line • 24/7</p>
+                  <a href="tel:+13184454818" className="text-xl sm:text-2xl md:text-3xl font-black text-primary hover:text-secondary transition-colors tracking-tighter truncate block">(318) 445-4818</a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 p-8 bg-slate-50 rounded-md border-l-8 border-primary shadow-lg">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-md shrink-0">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="flex items-center gap-4 sm:gap-6 p-5 sm:p-8 bg-slate-50 rounded-md border-l-8 border-primary shadow-lg overflow-hidden">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-md shrink-0">
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <div className="space-y-1 overflow-hidden">
-                  <p className="text-xs text-slate-500 font-black uppercase tracking-widest">Email Inquiries</p>
-                  <a href="mailto:procarpetandductcleaning@gmail.com" className="text-lg md:text-xl font-black text-primary hover:text-secondary transition-colors tracking-tight truncate block">procarpetandductcleaning@gmail.com</a>
+                <div className="space-y-1 overflow-hidden min-w-0 flex-1">
+                  <p className="text-[10px] sm:text-xs text-slate-500 font-black uppercase tracking-widest">Email Inquiries</p>
+                  <a href="mailto:procarpetandductcleaning@gmail.com" className="text-base sm:text-lg md:text-xl font-black text-primary hover:text-secondary transition-colors tracking-tight truncate block w-full">procarpetandductcleaning@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -125,9 +125,9 @@ const Contact: React.FC = () => {
           {/* Right Column: Map & Areas */}
           <div className="space-y-8 lg:pt-12">
             <div className="bg-primary rounded-md p-2 shadow-2xl h-[450px] relative">
-              <div className="absolute top-6 left-6 z-10 bg-white text-primary px-5 py-3 rounded-sm text-xs font-black shadow-2xl flex items-center gap-3 border-b-4 border-secondary">
-                <MapPin className="w-5 h-5 text-secondary" />
-                SERVING ALL OF CENTRAL LOUISIANA
+              <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-auto z-10 bg-white text-primary px-3 sm:px-5 py-2 sm:py-3 rounded-sm text-[10px] sm:text-xs font-black shadow-2xl flex items-center justify-center sm:justify-start gap-2 sm:gap-3 border-b-4 border-secondary overflow-hidden min-w-0">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
+                <span className="truncate min-w-0 flex-1 sm:flex-none">SERVING ALL OF CENTRAL LOUISIANA</span>
               </div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108428.61867119106!2d-92.5375785084931!3d31.30064366606821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86254c7d0e451b6d%3A0x6292723030d35091!2sAlexandria%2C%20LA!5e0!3m2!1sen!2sus!4v1709228955681!5m2!1sen!2sus"
@@ -140,11 +140,11 @@ const Contact: React.FC = () => {
               </iframe>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
               {['Alexandria', 'Pineville', 'Ball', 'Boyce', 'Woodworth', 'Lecompte', 'Forest Hill', 'Tioga', 'Libuse'].map((city) => (
-                <div key={city} className="flex items-center gap-3 bg-white p-4 rounded-sm border-2 border-slate-50 hover:border-secondary/20 hover:bg-slate-50 transition-all group">
-                  <div className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(211,47,47,0.5)]"></div>
-                  <span className="text-xs font-black text-primary uppercase tracking-widest">{city}</span>
+                <div key={city} className="flex items-center gap-2 sm:gap-3 bg-white p-3 sm:p-4 rounded-sm border-2 border-slate-50 hover:border-secondary/20 hover:bg-slate-50 transition-all group overflow-hidden min-w-0 w-full">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 shrink-0 rounded-full bg-secondary shadow-[0_0_8px_rgba(211,47,47,0.5)]"></div>
+                  <span className="text-[10px] sm:text-xs font-black text-primary uppercase tracking-widest truncate min-w-0 flex-1">{city}</span>
                 </div>
               ))}
             </div>
