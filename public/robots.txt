@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pro-carpet-and-duct.vercel.app/sitemap.xml
