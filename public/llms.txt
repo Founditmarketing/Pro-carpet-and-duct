@@ -4,18 +4,18 @@
 
 ## Services
 
-- [Carpet Cleaning](https://pro-carpet-and-duct.vercel.app/carpet): Deep steam carpet cleaning, pet odor and stain removal, sanitization.
-- [Air Duct Cleaning](https://pro-carpet-and-duct.vercel.app/air-duct): HVAC duct and system cleaning using Rotobrush technology to improve indoor air quality.
-- [Upholstery Cleaning](https://pro-carpet-and-duct.vercel.app/upholstery): Upholstered furniture and sofa steam cleaning, fabric sanitization.
-- [Ceramic Tile & Grout](https://pro-carpet-and-duct.vercel.app/ceramic-tile): Tile steam cleaning, grout color sealing, commercial kitchen degreasing.
-- [Reviews](https://pro-carpet-and-duct.vercel.app/reviews): Customer testimonials and reviews.
-- [Gallery](https://pro-carpet-and-duct.vercel.app/gallery): Before & after photos of our recent cleaning jobs.
-- [Contact Us](https://pro-carpet-and-duct.vercel.app/contact): Get a free estimate or contact our 24/7 service line.
+- [Carpet Cleaning](https://www.procarpetandductcleaning.com/carpet): Deep steam carpet cleaning, pet odor and stain removal, sanitization.
+- [Air Duct Cleaning](https://www.procarpetandductcleaning.com/air-duct): HVAC duct and system cleaning using Rotobrush technology to improve indoor air quality.
+- [Upholstery Cleaning](https://www.procarpetandductcleaning.com/upholstery): Upholstered furniture and sofa steam cleaning, fabric sanitization.
+- [Ceramic Tile & Grout](https://www.procarpetandductcleaning.com/ceramic-tile): Tile steam cleaning, grout color sealing, commercial kitchen degreasing.
+- [Reviews](https://www.procarpetandductcleaning.com/reviews): Customer testimonials and reviews.
+- [Gallery](https://www.procarpetandductcleaning.com/gallery): Before & after photos of our recent cleaning jobs.
+- [Contact Us](https://www.procarpetandductcleaning.com/contact): Get a free estimate or contact our 24/7 service line.
 
 ## Specialty Local Services
 
-- [Pet Odor & Stain Removal](https://pro-carpet-and-duct.vercel.app/pet-odor-stain-removal-alexandria-la): Professional pet urine extraction and sanitization in Alexandria, LA.
-- [HVAC Rotobrush Duct Cleaning](https://pro-carpet-and-duct.vercel.app/hvac-rotobrush-duct-cleaning-pineville-la): Rotobrush cleaning in Pineville, LA to remove dust and debris.
-- [Ceramic Tile & Grout Color Sealing](https://pro-carpet-and-duct.vercel.app/ceramic-tile-grout-color-sealing-alexandria): Professional tile grout sealing in Alexandria, LA.
-- [Upholstery Sofa Steam Cleaning](https://pro-carpet-and-duct.vercel.app/upholstery-sofa-steam-cleaning-alexandria): Deep sanitization for sofas and chairs in Alexandria, LA.
-- [Commercial Restaurant Tile Degreasing](https://pro-carpet-and-duct.vercel.app/commercial-restaurant-tile-degreasing-alexandria): Heavy duty grease removal for restaurant kitchens in Alexandria, LA.
+- [Pet Odor & Stain Removal](https://www.procarpetandductcleaning.com/pet-odor-stain-removal-alexandria-la): Professional pet urine extraction and sanitization in Alexandria, LA.
+- [HVAC Rotobrush Duct Cleaning](https://www.procarpetandductcleaning.com/hvac-rotobrush-duct-cleaning-pineville-la): Rotobrush cleaning in Pineville, LA to remove dust and debris.
+- [Ceramic Tile & Grout Color Sealing](https://www.procarpetandductcleaning.com/ceramic-tile-grout-color-sealing-alexandria): Professional tile grout sealing in Alexandria, LA.
+- [Upholstery Sofa Steam Cleaning](https://www.procarpetandductcleaning.com/upholstery-sofa-steam-cleaning-alexandria): Deep sanitization for sofas and chairs in Alexandria, LA.
+- [Commercial Restaurant Tile Degreasing](https://www.procarpetandductcleaning.com/commercial-restaurant-tile-degreasing-alexandria): Heavy duty grease removal for restaurant kitchens in Alexandria, LA.
