@@ -1,4 +1,4 @@
-import { Fan, Droplets, Sofa, CheckCircle2, ArrowRight, Layers, Building2 } from 'lucide-react';
+import { Fan, Droplets, Sofa, CheckCircle2, ArrowRight, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -22,15 +22,6 @@ const services = [
   },
   {
     id: 3,
-    title: 'Ceramic Tile & Grout',
-    desc: '3000-PSI high-pressure spinner cleaning followed by professional sealing to guard your grout.',
-    icon: <Layers className="w-8 h-8" />,
-    iconColor: 'text-secondary',
-    features: ['Professional Grout Sealing', 'Marble, Granite & Slate', 'Commercial & Residential', '3000-PSI Precision'],
-    link: '/ceramic-tile'
-  },
-  {
-    id: 4,
     title: 'Upholstery Cleaning',
     desc: 'High-pressure steam cleaning for antique and everyday furniture using Dupont™ protection.',
     icon: <Sofa className="w-8 h-8" />,
@@ -39,7 +30,7 @@ const services = [
     link: '/upholstery'
   },
   {
-    id: 5,
+    id: 4,
     title: 'Commercial Cleaning',
     desc: 'Specialized industrial-grade cleaning for grocery stores, offices, and commercial venues.',
     icon: <Building2 className="w-8 h-8" />,

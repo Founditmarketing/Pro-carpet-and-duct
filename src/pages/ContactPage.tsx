@@ -141,7 +141,6 @@ const ContactPage: React.FC = () => {
                     <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-transparent focus:border-secondary focus:bg-white outline-none transition-all text-slate-900 font-bold appearance-none bg-slate-50 cursor-pointer">
                       <option>Carpet Deep Cleaning</option>
                       <option>Air Duct Sanitization</option>
-                      <option>Ceramic Tile &amp; Grout</option>
                       <option>Upholstery Refresh</option>
                       <option>Commercial Venue Cleaning</option>
                     </select>

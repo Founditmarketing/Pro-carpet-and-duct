@@ -1,4 +1,9 @@
 {
+    "redirects": [
+        { "source": "/ceramic-tile", "destination": "/", "permanent": true },
+        { "source": "/ceramic-tile-grout-color-sealing-alexandria", "destination": "/", "permanent": true },
+        { "source": "/commercial-restaurant-tile-degreasing-alexandria", "destination": "/", "permanent": true }
+    ],
     "rewrites": [
         {
             "source": "/((?!api/.*|sitemap\\.xml|robots\\.txt|llms\\.txt).*)",

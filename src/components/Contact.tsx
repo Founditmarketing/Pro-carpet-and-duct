@@ -72,7 +72,6 @@ const Contact: React.FC = () => {
                   <select value={service} onChange={e => setService(e.target.value)} className="w-full px-5 py-4 rounded-sm border-2 border-slate-100 focus:border-secondary focus:bg-slate-50 outline-none transition-all text-slate-600 font-bold appearance-none overflow-hidden text-ellipsis whitespace-nowrap">
                     <option>Carpet Cleaning (Industrial Steam)</option>
                     <option>Air Duct Cleaning (Rotobrush™)</option>
-                    <option>Ceramic Tile &amp; Grout Sealing</option>
                     <option>Upholstery Refresh</option>
                     <option>Commercial Venue Cleaning</option>
                   </select>

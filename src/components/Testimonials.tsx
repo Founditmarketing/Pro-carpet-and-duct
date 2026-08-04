@@ -28,12 +28,6 @@ const reviews = [
     rating: 5
   },
   {
-    name: "Jennifer R.",
-    location: "Alexandria, LA",
-    text: "We just bought an older home and had them clean the ceramic tile and grout in the kitchen. It literally looks like a brand new floor. Night and day difference.",
-    rating: 5
-  },
-  {
     name: "Mark T.",
     location: "Pineville, LA",
     text: "These guys are the real deal. Had them clean all the air ducts in my house and two large sectionals. They were very respectful of my property.",

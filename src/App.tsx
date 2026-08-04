@@ -4,15 +4,12 @@ import Home from './pages/Home';
 import CarpetService from './pages/CarpetService';
 import AirDuctService from './pages/AirDuctService';
 import UpholsteryService from './pages/UpholsteryService';
-import TileService from './pages/TileService';
 import Reviews from './pages/Reviews';
 import ContactPage from './pages/ContactPage';
 import Gallery from './pages/Gallery';
 import PetOdorRemoval from './pages/PetOdorRemoval';
 import HvacDuctCleaning from './pages/HvacDuctCleaning';
-import CeramicTileSealing from './pages/CeramicTileSealing';
 import UpholsterySteamCleaning from './pages/UpholsterySteamCleaning';
-import CommercialTileDegreasing from './pages/CommercialTileDegreasing';
 import StickyCallButton from './components/StickyCallButton';
 import { Phone, MapPin, Facebook, Clock, Menu, X } from 'lucide-react';
 
@@ -68,7 +65,6 @@ const App: React.FC = () => {
             <Link to="/carpet" className="hover:text-secondary transition-colors uppercase tracking-widest">Carpet</Link>
             <Link to="/air-duct" className="hover:text-secondary transition-colors uppercase tracking-widest">Air Duct</Link>
             <Link to="/upholstery" className="hover:text-secondary transition-colors uppercase tracking-widest">Upholstery</Link>
-            <Link to="/ceramic-tile" className="hover:text-secondary transition-colors uppercase tracking-widest">Ceramic Tile</Link>
             <Link to="/reviews" className="hover:text-secondary transition-colors uppercase tracking-widest">Reviews</Link>
             <Link to="/gallery" className="hover:text-secondary transition-colors uppercase tracking-widest">Gallery</Link>
             <Link to="/contact" className="hover:text-secondary transition-colors uppercase tracking-widest">Contact Us</Link>
@@ -128,9 +124,6 @@ const App: React.FC = () => {
           <Link to="/upholstery" className="group flex items-center gap-4 text-xl font-bold text-slate-200 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
              <div className="w-2 h-2 rounded-full bg-secondary/0 group-hover:bg-secondary transition-colors"></div> Upholstery
           </Link>
-          <Link to="/ceramic-tile" className="group flex items-center gap-4 text-xl font-bold text-slate-200 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-             <div className="w-2 h-2 rounded-full bg-secondary/0 group-hover:bg-secondary transition-colors"></div> Ceramic Tile
-          </Link>
           <Link to="/reviews" className="group flex items-center gap-4 text-xl font-bold text-slate-200 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
              <div className="w-2 h-2 rounded-full bg-secondary/0 group-hover:bg-secondary transition-colors"></div> Reviews
           </Link>
@@ -161,15 +154,12 @@ const App: React.FC = () => {
         <Route path="/carpet" element={<CarpetService />} />
         <Route path="/air-duct" element={<AirDuctService />} />
         <Route path="/upholstery" element={<UpholsteryService />} />
-        <Route path="/ceramic-tile" element={<TileService />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/pet-odor-stain-removal-alexandria-la" element={<PetOdorRemoval />} />
         <Route path="/hvac-rotobrush-duct-cleaning-pineville-la" element={<HvacDuctCleaning />} />
-        <Route path="/ceramic-tile-grout-color-sealing-alexandria" element={<CeramicTileSealing />} />
         <Route path="/upholstery-sofa-steam-cleaning-alexandria" element={<UpholsterySteamCleaning />} />
-        <Route path="/commercial-restaurant-tile-degreasing-alexandria" element={<CommercialTileDegreasing />} />
       </Routes>
 
       {/* Footer */}
@@ -224,9 +214,7 @@ const App: React.FC = () => {
             <div className="flex flex-col gap-2 text-slate-300 text-xs font-bold uppercase tracking-wider">
               <Link to="/pet-odor-stain-removal-alexandria-la" className="hover:text-secondary transition-colors">Pet Urine & Odor Removal</Link>
               <Link to="/hvac-rotobrush-duct-cleaning-pineville-la" className="hover:text-secondary transition-colors">HVAC Pineville Dust Cleaning</Link>
-              <Link to="/ceramic-tile-grout-color-sealing-alexandria" className="hover:text-secondary transition-colors">Ceramic Grout Color Sealing</Link>
               <Link to="/upholstery-sofa-steam-cleaning-alexandria" className="hover:text-secondary transition-colors">Upholstered Sofa Sanitization</Link>
-              <Link to="/commercial-restaurant-tile-degreasing-alexandria" className="hover:text-secondary transition-colors">Commercial Restaurant Degreasing</Link>
             </div>
 
             <div className="mt-8 flex gap-4">

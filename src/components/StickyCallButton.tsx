@@ -109,7 +109,6 @@ const StickyCallButton: React.FC = () => {
                     <select value={service} onChange={e => setService(e.target.value)} className="w-full px-4 py-3 rounded-sm border-2 border-slate-200 focus:border-secondary focus:bg-slate-50 outline-none transition-all font-bold text-slate-800 bg-slate-50 appearance-none text-sm cursor-pointer">
                       <option>Carpet Deep Cleaning</option>
                       <option>Air Duct Sanitization</option>
-                      <option>Ceramic Tile &amp; Grout</option>
                       <option>Upholstery Refresh</option>
                       <option>Commercial Cleaning</option>
                     </select>
