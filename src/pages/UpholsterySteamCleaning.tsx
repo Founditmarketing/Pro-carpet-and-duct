@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { ArrowRight, Sofa, Sparkles } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Testimonials from '../components/Testimonials';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, faqSchema } from '../utils/schema';
+
+const PATH = '/upholstery-sofa-steam-cleaning-alexandria';
 
 const UpholsterySteamCleaning = () => {
   const { pathname } = useLocation();
@@ -10,19 +14,40 @@ const UpholsterySteamCleaning = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Upholstered Sectional & Sofa Steam Cleaning",
-    "provider": { "@type": "LocalBusiness", "name": "Pro Carpet & Duct Cleaning" },
-    "description": "Delicate hot-water extraction and steam sanitization for living room sofas, sectionals, and dining chairs across CenLa.",
-    "serviceType": "Upholstery Cleaning Service"
-  };
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Upholstered Sectional & Sofa Steam Cleaning",
+      "provider": { "@type": "LocalBusiness", "name": "Pro Carpet & Duct Cleaning" },
+      "description": "Delicate hot-water extraction and steam sanitization for living room sofas, sectionals, and dining chairs across CenLa.",
+      "serviceType": "Upholstery Cleaning Service"
+    },
+    faqSchema([
+      {
+        question: 'Will steam ruin the color of my couch?',
+        answer: 'No. We individually inspect the stitching and fabric tags of every single piece of upholstery we clean. We adjust our heat calibration and pressure specifically to the material, guaranteeing color-fastness.',
+      },
+      {
+        question: 'Can you get dark body oils out of recliner armrests?',
+        answer: 'Yes. Our heavy-duty enzymatic upholstery detergents rapidly break down tough protein bonds (body oils) and sweat stains, extracting the dark film back to its original tone.',
+      },
+    ]),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Sofa & Sectional Steam Cleaning', path: PATH },
+    ]),
+  ];
 
   return (
     <main className="pt-28 md:pt-36 pb-0 animate-fade-in-up bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      
+      <PageSEO
+        title="Sofa & Sectional Steam Cleaning Alexandria, LA | Pro Carpet & Duct Cleaning"
+        description="Delicate hot-water extraction and steam sanitization for sofas, sectionals & dining chairs in Alexandria, LA. Safe for all fabric types. Free quotes."
+        path={PATH}
+        schema={schema}
+      />
+
       <div className="container mx-auto px-4 max-w-5xl mb-20">
         <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">Alexandria Service Entity</span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">Professional Sectional &amp; Sofa Steam Cleaning in Alexandria, LA</h1>

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema } from '../utils/schema';
 
 const GALLERY_IMAGES = [
   "2029.jpg",
@@ -32,8 +34,19 @@ const Gallery: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const schema = breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Gallery', path: '/gallery' },
+  ]);
+
   return (
     <main className="pb-0 animate-fade-in-up bg-slate-50 min-h-screen">
+      <PageSEO
+        title="Before & After Gallery | Pro Carpet & Duct Cleaning Alexandria, LA"
+        description="See real before-and-after results from our carpet, air duct, and upholstery cleaning jobs across Alexandria, Pineville, and Central Louisiana."
+        path="/gallery"
+        schema={schema}
+      />
       {/* Slim Hero Section */}
       <section className="bg-primary text-white pt-40 pb-20 px-4 relative overflow-hidden hidden md:block border-b border-white/10">
         <div className="container mx-auto relative z-10 text-center max-w-4xl pt-8 pb-4">

@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { ShieldAlert, Droplets, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Testimonials from '../components/Testimonials';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, faqSchema } from '../utils/schema';
+
+const PATH = '/pet-odor-stain-removal-alexandria-la';
 
 const PetOdorRemoval = () => {
   const { pathname } = useLocation();
@@ -10,35 +14,56 @@ const PetOdorRemoval = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Pet Urine Odor & Stain Carpet Extraction",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Pro Carpet & Duct Cleaning",
-      "telephone": "+1-318-445-4818",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "3603 Bayou Rapides Rd",
-        "addressLocality": "Alexandria",
-        "addressRegion": "LA",
-        "postalCode": "71303",
-        "addressCountry": "US"
-      }
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Pet Urine Odor & Stain Carpet Extraction",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pro Carpet & Duct Cleaning",
+        "telephone": "+1-318-445-4818",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3603 Bayou Rapides Rd",
+          "addressLocality": "Alexandria",
+          "addressRegion": "LA",
+          "postalCode": "71303",
+          "addressCountry": "US"
+        }
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Alexandria", "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Louisiana" },
+        { "@type": "City", "name": "Pineville", "sameAs": "https://en.wikipedia.org/wiki/Pineville,_Louisiana" }
+      ],
+      "description": "Professional pet odor removal, deep enzymatic stain treatment, and 230°F steam carpet extraction for residential homes in Alexandria and Pineville.",
+      "serviceType": "Carpet Cleaning Service"
     },
-    "areaServed": [
-      { "@type": "City", "name": "Alexandria", "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Louisiana" },
-      { "@type": "City", "name": "Pineville", "sameAs": "https://en.wikipedia.org/wiki/Pineville,_Louisiana" }
-    ],
-    "description": "Professional pet odor removal, deep enzymatic stain treatment, and 230°F steam carpet extraction for residential homes in Alexandria and Pineville.",
-    "serviceType": "Carpet Cleaning Service"
-  };
+    faqSchema([
+      {
+        question: 'Can you get old dog urine smell out of the carpet pad?',
+        answer: 'Yes. If left untreated, urine seeps into the subfloor and crystallizes. We utilize heavy-duty enzymatic pre-treatments followed by high-suction Hurricane™ extraction to pull liquid from the depth of the pad, not just the surface fibers.',
+      },
+      {
+        question: 'Will the stains come back after the carpet dries?',
+        answer: '"Wicking" occurs when surface-level cleaning fails to reach the pad. Because our truck-mounted extraction physically removes the soil from the base layer, stains do not wick back up. Your carpets dry fast and remain clean.',
+      },
+    ]),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Pet Urine Odor & Stain Removal', path: PATH },
+    ]),
+  ];
 
   return (
     <main className="pt-28 md:pt-36 pb-0 animate-fade-in-up bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      
+      <PageSEO
+        title="Pet Urine Odor & Stain Removal Alexandria, LA | Pro Carpet & Duct Cleaning"
+        description="Professional pet odor removal, deep enzymatic stain treatment, and 230°F steam carpet extraction in Alexandria & Pineville, LA. Same-day quotes."
+        path={PATH}
+        schema={schema}
+      />
+
       <div className="container mx-auto px-4 max-w-5xl mb-20">
         <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">Alexandria & Pineville Service Entity</span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">Expert Pet Urine Odor &amp; Stain Carpet Extraction in Alexandria, LA</h1>

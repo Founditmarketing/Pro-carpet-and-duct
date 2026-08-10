@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Phone, MapPin, Clock, Facebook, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { sendQuoteEmail } from '../utils/sendEmail';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema } from '../utils/schema';
 
 const ContactPage: React.FC = () => {
   const { pathname } = useLocation();
@@ -34,8 +36,19 @@ const ContactPage: React.FC = () => {
     }
   };
 
+  const schema = breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Contact Us', path: '/contact' },
+  ]);
+
   return (
     <main className="pt-28 md:pt-36 pb-20 animate-fade-in-up bg-primary min-h-screen relative overflow-hidden">
+      <PageSEO
+        title="Contact Us | Pro Carpet & Duct Cleaning Alexandria, LA"
+        description="Request a free quote for carpet, air duct, or upholstery cleaning in Alexandria & Pineville, LA. Call (318) 445-4818 or fill out our form — open 24/7."
+        path="/contact"
+        schema={schema}
+      />
       <section className="container mx-auto max-w-7xl px-4 py-8 md:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           

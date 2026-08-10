@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { Fan, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Testimonials from '../components/Testimonials';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, faqSchema } from '../utils/schema';
+
+const PATH = '/hvac-rotobrush-duct-cleaning-pineville-la';
 
 const HvacDuctCleaning = () => {
   const { pathname } = useLocation();
@@ -10,26 +14,47 @@ const HvacDuctCleaning = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "HVAC Rotobrush Air Duct Sanitization",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Pro Carpet & Duct Cleaning"
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "HVAC Rotobrush Air Duct Sanitization",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pro Carpet & Duct Cleaning"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Pineville", "sameAs": "https://en.wikipedia.org/wiki/Pineville,_Louisiana" },
+        { "@type": "City", "name": "Alexandria", "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Louisiana" }
+      ],
+      "description": "Advanced Rotobrush technology to physically scrub and sanitize HVAC ductwork, removing mold, allergens, and dust buildup in CenLa.",
+      "serviceType": "Air Duct Cleaning Service"
     },
-    "areaServed": [
-      { "@type": "City", "name": "Pineville", "sameAs": "https://en.wikipedia.org/wiki/Pineville,_Louisiana" },
-      { "@type": "City", "name": "Alexandria", "sameAs": "https://en.wikipedia.org/wiki/Alexandria,_Louisiana" }
-    ],
-    "description": "Advanced Rotobrush technology to physically scrub and sanitize HVAC ductwork, removing mold, allergens, and dust buildup in CenLa.",
-    "serviceType": "Air Duct Cleaning Service"
-  };
+    faqSchema([
+      {
+        question: 'Why is the Rotobrush system better than air whipping?',
+        answer: 'Negative air vacuums just suck loose debris. The Rotobrush has a high-speed spinning brush head that actively scrubs the caked-on mold and heavy particulate matter stuck to the sidewalls of your ducting while a massive vacuum instantly extracts it.',
+      },
+      {
+        question: 'Will this stop my chronic indoor allergies?',
+        answer: 'If your HVAC system is pushing mold spores, dust mites, and pet dander through the vents 24/7, your allergies will never stop. Thorough duct sanitization stops the cycle and dramatically enhances indoor breathing quality.',
+      },
+    ]),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'HVAC Rotobrush Duct Cleaning', path: PATH },
+    ]),
+  ];
 
   return (
     <main className="pt-28 md:pt-36 pb-0 animate-fade-in-up bg-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      
+      <PageSEO
+        title="HVAC Rotobrush Duct Cleaning Pineville, LA | Pro Carpet & Duct Cleaning"
+        description="Advanced Rotobrush air duct sanitization removes mold, allergens & dust buildup from HVAC systems in Pineville & Alexandria, LA. Free estimates."
+        path={PATH}
+        schema={schema}
+      />
+
       <div className="container mx-auto px-4 max-w-5xl mb-20">
         <span className="text-secondary font-bold tracking-widest uppercase text-xs md:text-sm mb-4 block">Pineville & Alexandria Service Entity</span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">Advanced HVAC Rotobrush Air Duct Cleaning &amp; Sanitization in Pineville</h1>

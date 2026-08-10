@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Phone, Wind, Zap, ShieldCheck } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, localBusinessRef } from '../utils/schema';
 
 const AirDuctService: React.FC = () => {
   const { pathname } = useLocation();
@@ -9,8 +11,33 @@ const AirDuctService: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Air Duct Cleaning',
+      provider: localBusinessRef,
+      areaServed: [
+        { '@type': 'City', name: 'Alexandria' },
+        { '@type': 'City', name: 'Pineville' },
+      ],
+      description: "Professional HVAC air duct cleaning removes trapped dust, allergens, mold, and construction debris from your home's ductwork.",
+      serviceType: 'Air Duct Cleaning Service',
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Air Duct Cleaning', path: '/air-duct' },
+    ]),
+  ];
+
   return (
     <main className="pb-0 animate-fade-in-up">
+      <PageSEO
+        title="Air Duct Cleaning Alexandria & Pineville, LA | Pro Carpet & Duct Cleaning"
+        description="Professional air duct cleaning removes trapped dust, allergens & mold from your HVAC system. Serving Alexandria & Pineville, LA since 1985. Free quotes."
+        path="/air-duct"
+        schema={schema}
+      />
       {/* Slim Hero Section */}
       <section className="bg-primary text-white pt-40 pb-20 px-4 relative overflow-hidden hidden md:block border-b border-white/10">
         <div className="container mx-auto relative z-10 text-center max-w-4xl pt-8 pb-4">

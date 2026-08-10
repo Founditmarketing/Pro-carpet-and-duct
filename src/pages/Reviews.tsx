@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import Testimonials from '../components/Testimonials';
+import Testimonials, { reviews } from '../components/Testimonials';
 import { useLocation } from 'react-router-dom';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, reviewSchema } from '../utils/schema';
 
 const Reviews: React.FC = () => {
   const { pathname } = useLocation();
@@ -9,8 +11,22 @@ const Reviews: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const schema = [
+    reviewSchema(reviews),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Reviews', path: '/reviews' },
+    ]),
+  ];
+
   return (
     <main className="pb-0 animate-fade-in-up">
+      <PageSEO
+        title="Customer Reviews | Pro Carpet & Duct Cleaning Alexandria, LA"
+        description="Read verified 5-star reviews from Alexandria & Pineville homeowners on Pro Carpet & Duct Cleaning's carpet, air duct, and upholstery cleaning services."
+        path="/reviews"
+        schema={schema}
+      />
       {/* Slim Hero Section */}
       <section className="bg-primary text-white pt-40 pb-20 px-4 relative overflow-hidden hidden md:block border-b border-white/10">
         <div className="container mx-auto relative z-10 text-center max-w-4xl pt-8 pb-4">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const reviews = [
+export const reviews = [
   {
     name: "Sarah J.",
     location: "Alexandria, LA",

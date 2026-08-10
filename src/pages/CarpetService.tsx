@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Phone, CheckCircle2, Droplets } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import PageSEO from '../components/PageSEO';
+import { breadcrumbSchema, localBusinessRef } from '../utils/schema';
 
 const CarpetService: React.FC = () => {
   const { pathname } = useLocation();
@@ -9,8 +11,33 @@ const CarpetService: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Carpet Cleaning',
+      provider: localBusinessRef,
+      areaServed: [
+        { '@type': 'City', name: 'Alexandria' },
+        { '@type': 'City', name: 'Pineville' },
+      ],
+      description: 'Industrial truck-mounted 230°F steam carpet extraction, stain removal, and sanitization for residential and commercial carpets.',
+      serviceType: 'Carpet Cleaning Service',
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Carpet Cleaning', path: '/carpet' },
+    ]),
+  ];
+
   return (
     <main className="pb-0 animate-fade-in-up">
+      <PageSEO
+        title="Expert Carpet Cleaning Alexandria & Pineville, LA | Pro Carpet & Duct Cleaning"
+        description="Industrial 230°F truck-mounted steam carpet cleaning in Alexandria & Pineville, LA. Family owned since 1985. Deep stain removal, fast drying. Free quotes."
+        path="/carpet"
+        schema={schema}
+      />
       {/* Slim Hero Section */}
       <section className="bg-primary text-white pt-40 pb-20 px-4 relative overflow-hidden hidden md:block border-b border-white/10">
         <div className="container mx-auto relative z-10 text-center max-w-4xl pt-8 pb-4">
